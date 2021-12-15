@@ -23,9 +23,6 @@ jobs:
         ./build.sh
         artifact_path=`ls $(pwd)/target/releases/opendistro_security_kibana_plugin-*.zip`
         artifact_name=`basename $artifact_path`
-        echo ::set-env name=ARTIFACT_PATH::$artifact_path
-        echo ::set-env name=ARTIFACT_NAME::$artifact_name
-        echo ::set-env name=TAG_VERSION::${GITHUB_REF/refs\/tags\//}
 
     - name: Upload
       uses: fnkr/github-action-ghr@v1
